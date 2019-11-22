@@ -44,10 +44,20 @@ export class MovieSelectComponent implements OnInit {
       this.loaded = false;
       this.characters = [];
       this.movieForInformations = this.selectedMovie;
-      this.characterService.getCharacterInformations(this.selectedMovie.characters).subscribe(response => {
-        this.characters = response;
-        this.loaded = true;
-      });
+      new Promise((resolve, reject) => {
+        this.characterService.getCharacterInformations(this.selectedMovie.characters).subscribe(response => {
+          this.characters = response;
+          this.loaded = true; resolve();
+        },
+          error => {
+            this.loaded = true;
+            this.handleError();
+          });
+      }).then();
+      // this.characterService.getCharacterInformations(this.selectedMovie.characters).subscribe(response => {
+      //   this.characters = response;
+      //   this.loaded = true;
+      // });
     }
   }
   handleError() {
