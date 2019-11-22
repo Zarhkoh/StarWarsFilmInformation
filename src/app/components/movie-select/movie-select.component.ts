@@ -33,10 +33,9 @@ export class MovieSelectComponent implements OnInit {
           resolve();
         },
         error => {
-          this.loaded = true;
           this.handleError();
         });
-    }).then();
+    }).then(() => this.loaded = true);
   }
 
   showMovieInformations() {
@@ -47,17 +46,13 @@ export class MovieSelectComponent implements OnInit {
       new Promise((resolve, reject) => {
         this.characterService.getCharacterInformations(this.selectedMovie.characters).subscribe(response => {
           this.characters = response;
-          this.loaded = true; resolve();
+
+          resolve();
         },
           error => {
-            this.loaded = true;
             this.handleError();
           });
-      }).then();
-      // this.characterService.getCharacterInformations(this.selectedMovie.characters).subscribe(response => {
-      //   this.characters = response;
-      //   this.loaded = true;
-      // });
+      }).then(() => this.loaded = true);
     }
   }
   handleError() {

@@ -12,7 +12,6 @@ export class CharacterService {
 
   getCharacterInformations(urlList: string[]) {
     const characters$ = urlList.map(url => this.http.get<Character>(url));
-    console.log('SERVICE LIST?', characters$);
     return forkJoin(characters$);
   }
 }
