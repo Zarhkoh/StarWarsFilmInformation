@@ -1,0 +1,19 @@
+.card {
+  background: rgba(0, 0, 0, 0.616);
+  color: rgb(231, 230, 230);
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  height: 15em;
+  width: 20em;
+  box-shadow: 0 14px 28px rgba(5, 157, 245, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.name {
+  font-size: 1.3em;
+  font-family: "jedi";
+  text-shadow: 1px 0px 9px rgb(4, 202, 216);
+}
+strong {
+  color: #00a9ec;
+}

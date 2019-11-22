@@ -1,0 +1,8 @@
+<div *ngIf="selectedMovieForInformations">
+  <h1 class="text-center mt-3"> Episode {{selectedMovieForInformations.episode_id}}:
+    {{selectedMovieForInformations.title}}
+  </h1>
+  <p id="secondary-txt" class="text-center"> réalisé par {{selectedMovieForInformations.director}}, sorti le
+    {{selectedMovieForInformations.release_date | date:'dd/MM/yyy'}}</p>
+  <p class="opening-crawl text-justify  my-5 mx-auto"> {{selectedMovieForInformations.opening_crawl}}</p>
+</div>

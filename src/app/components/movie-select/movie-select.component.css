@@ -1,0 +1,36 @@
+select {
+  width: auto;
+  background-color: #090a0f;
+  color: #ffe81f;
+  border: 1px solid#303030;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+select:focus {
+  border-color: #ee1919;
+  outline: 0;
+  box-shadow: -5px 0px 6px 0.5rem rgba(255, 0, 0, 0.25);
+}
+select:hover {
+  border-color: #00b9f1;
+  outline: 0;
+  box-shadow: -5px 0px 6px 0.5rem rgba(0, 183, 255, 0.25);
+}
+button {
+  border: 1px solid#303030;
+  border-left: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+button:hover {
+  border-color: #ffe81f;
+  background-color: #ffe81f;
+  color: #303030;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+#logo {
+  width: 22em;
+}
+#title-txt {
+  font-size: 2em;
+}

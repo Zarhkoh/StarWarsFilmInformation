@@ -1,0 +1,18 @@
+@font-face {
+  font-family: jedi;
+  src: url("./assets/fonts/starjedi/Starjedi.ttf");
+}
+@font-face {
+  font-family: News Gothic;
+  src: url("./assets/fonts/NewsGhotic/NewsGothicStd.otf");
+}
+body {
+  color: white;
+  background: url("./assets/imgs/stars-bg.png");
+}
+h1,
+h2,
+.title {
+  color: #ffe81f;
+  font-family: jedi;
+}

@@ -1,0 +1,34 @@
+<div *ngIf="!error; else errorAlert">
+  <div *ngIf="movies; else loading">
+    <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+      <div class="title">
+        <img id="logo" class="mb-0" src="../../../assets/imgs/header_logo.png">
+        <p id="title-txt" class="mt-0 mb-5 text-center">movies info</p>
+      </div>
+      <div>
+        <select class="custom-select" [(ngModel)]="selectedMovie">
+          <option *ngFor="let movie of movies" [ngValue]="movie"> {{movie.title}}</option>
+        </select>
+        <button (click)="showMovieInformations()" class="btn btn-outline-secondary" type="button">Ok</button>
+      </div>
+    </div>
+    <div *ngIf="loaded; else loading">
+      <app-movie-details *ngIf="movieForInformations" [selectedMovieForInformations]="movieForInformations">
+      </app-movie-details>
+      <app-movie-characters [characters]="characters">
+      </app-movie-characters>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="d-flex justify-content-center align-items-center mt-5">
+    <img src="../../../assets/imgs/spinner.gif">
+  </div>
+</ng-template>
+
+<ng-template #errorAlert>
+  <div class="d-flex flex-column justify-content-center align-items-center mt-5">
+    <img src="../../../assets/imgs/error_porg.png">
+    <h2 class="text-align-center">{{error}} </h2>
+  </div>
+</ng-template>
